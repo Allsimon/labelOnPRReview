@@ -16,6 +16,6 @@ jobs:
       - uses: Resnovas/smartcloud@1.0.0-alpha.7
         name: Labeling
         with:
-          config: "label-config.json"
+          config: ".github/label-config.json"
           skipDelete: true
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
