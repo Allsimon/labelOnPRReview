@@ -1,119 +1,78 @@
-{
-  "labels": {
-    "[X] Documented :scroll:": {
-      "name": "[X] Documented :scroll:",
-      "description": "Has been documented!",
-      "color": "0052cc"
+[
+  {
+    "root": ".",
+    "projectType": "other",
+    "versioning": {
+      "source": "milestones",
+      "type": "SemVer"
     },
-    "[X] Investigation :mag:": {
-      "name": "[X] Investigation :mag:",
-      "color": "D107F7"
-    },
-    "[X] Accepted :heavy_check_mark:": {
-      "name": "[X] Accepted :heavy_check_mark:",
-      "color": "072dbc"
-    },
-    "[X] Awaiting Review :eyes:": {
-      "name": "[X] Awaiting Review :eyes:",
-      "color": "FBCA04"
-    },
-    "[X] Changes Requested :diamonds:": {
-      "name": "[X] Changes Requested :diamonds:",
-      "color": "f4ff1f"
-    },
-    "[X] In Progress :gear:": {
-      "name": "[X] In Progress :gear:",
-      "color": "C5DEF5"
-    },
-    "[X] Needs documentation :pencil2:": {
-      "name": "[X] Needs documentation :pencil2:",
-      "description": "This needs to be documented!",
-      "color": "0052cc"
-    }
-  },
-  "runners": [
-    {
-      "root": ".",
-      "versioning": {
-        "source": "milestones",
-        "type": "SemVer"
-      },
-      "prereleaseName": "alpha",
-      "sharedConfig": {
-      },
-      "pr": {
-        "labels": {
-          "[X] Accepted :heavy_check_mark:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "isApproved",
-                "value": true,
-                "required": 1
-              }
-            ]
-          },
-          "[X] In Progress :gear:": {
-            "requires": 3,
-            "conditions": [
-              {
-                "type": "pendingReview",
-                "value": false
-              },
-              {
-                "type": "requestedChanges",
-                "value": false
-              },
-              {
-                "type": "isApproved",
-                "value": false,
-                "required": 1
-              }
-            ]
-          },
-          "[X] Awaiting Review :eyes:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "pendingReview",
-                "value": true
-              }
-            ]
-          },
-          "[X] Changes Requested :diamonds:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "requestedChanges",
-                "value": true
-              }
-            ]
-          }
-        }
-      },
-      "issue": {
-        "ref": "develop",
-        "labels": {
-          "[X] Documented :scroll:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^\\s*- \\[x\\] Has been documented/im"
-              }
-            ]
-          },
-          "[X] Needs documentation :pencil2:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^\\s*- \\[ \\] Has been documented/im"
-              }
-            ]
-          }
+    "pr": {
+      "labels": {
+        "backend": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "filesMatch",
+              "glob": "backend/**/*"
+            }
+          ]
+        },
+        "UI": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "filesMatch",
+              "glob": "ui/**/*"
+            }
+          ]
+        },
+        "documentation": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "filesMatch",
+              "glob": "documentation/**/*"
+            }
+          ]
+        },
+        "draft": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "isDraft",
+              "value": true
+            }
+          ]
+        },
+        "waiting_review": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "pendingReview",
+              "value": true
+            }
+          ]
+        },
+        "changes_requested": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "requestedChanges",
+              "value": true
+            }
+          ]
+        },
+        "ready_to_test": {
+          "requires": 1,
+          "conditions": [
+            {
+              "type": "isApproved",
+              "value": true,
+              "required": 1
+            }
+          ]
         }
       }
     }
-  ]
-}
+  }
+]
