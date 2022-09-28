@@ -28,10 +28,12 @@
   "runners": [
     {
       "root": ".",
-      "projectType": "other",
       "versioning": {
         "source": "milestones",
         "type": "SemVer"
+      },
+      "prereleaseName": "alpha",
+      "sharedConfig": {
       },
       "pr": {
         "labels": {
