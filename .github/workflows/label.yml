@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Checkout
-      - uses: Resnovas/label-mastermind@2.1.3
+      - uses: Resnovas/smartcloud@1.0.0-alpha.7
         name: Labeling
         with:
           skipDelete: true
