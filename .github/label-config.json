@@ -81,9 +81,14 @@
             "requires": 1,
             "conditions": [
               {
-                "type": "isApproved",
-                "value": true,
-                "required": 1
+                "type": "$not",
+                "condition": [
+                  {
+                    "type": "isApproved",
+                    "value": true,
+                    "required": 1
+                  }
+                ]
               }
             ]
           },
