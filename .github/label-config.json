@@ -1,0 +1,123 @@
+{
+  "labels": {
+    "backend": {
+      "name": "backend",
+      "color": "0052cc"
+    },
+    "UI": {
+      "name": "UI",
+      "color": "0052cc"
+    },
+    "documentation": {
+      "name": "documentation",
+      "color": "0052cc"
+    },
+    "draft": {
+      "name": "draft",
+      "color": "0052cc"
+    },
+    "waiting_review": {
+      "name": "waiting_review",
+      "color": "FBCA04"
+    },
+    "changes_requested": {
+      "name": "changes_requested",
+      "color": "f4ff1f"
+    },
+    "ready_to_test": {
+      "name": "ready_to_test",
+      "color": "008000"
+    }
+  },
+  "runners": [
+    {
+      "root": ".",
+      "versioning": {
+        "source": "milestones",
+        "type": "SemVer"
+      },
+      "prereleaseName": "alpha",
+      "sharedConfig": {
+      },
+      "pr": {
+        "labels": {
+          "backend": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "filesMatch",
+                "glob": "backend/**/*"
+              }
+            ]
+          },
+          "UI": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "filesMatch",
+                "glob": "ui/**/*"
+              }
+            ]
+          },
+          "documentation": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "filesMatch",
+                "glob": "documentation/**/*"
+              }
+            ]
+          },
+          "draft": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "isDraft",
+                "value": true
+              }
+            ]
+          },
+          "waiting_review": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "$not",
+                "condition": [
+                  {
+                    "requires": 1,
+                    "conditions": [
+                      {
+                        "type": "isApproved",
+                        "value": true,
+                        "required": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "changes_requested": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "requestedChanges",
+                "value": true
+              }
+            ]
+          },
+          "ready_to_test": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "isApproved",
+                "value": true,
+                "required": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
