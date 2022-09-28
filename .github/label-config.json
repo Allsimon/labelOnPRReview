@@ -81,12 +81,9 @@
             "requires": 1,
             "conditions": [
               {
-                "type": "pendingReview",
-                "value": true
-              },
-              {
                 "type": "isApproved",
-                "value": false
+                "value": true,
+                "required": 1
               }
             ]
           },
