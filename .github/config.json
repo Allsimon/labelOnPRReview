@@ -1,5 +1,9 @@
 {
   "labels": {
+    "backend": {
+      "name": "backend",
+      "color": "0052cc"
+    },
     "UI": {
       "name": "UI",
       "color": "0052cc"
