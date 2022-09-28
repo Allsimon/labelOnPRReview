@@ -1,33 +1,27 @@
 {
   "labels": {
-    "[X] Documented :scroll:": {
-      "name": "[X] Documented :scroll:",
-      "description": "Has been documented!",
+    "UI": {
+      "name": "UI",
       "color": "0052cc"
     },
-    "[X] Investigation :mag:": {
-      "name": "[X] Investigation :mag:",
-      "color": "D107F7"
+    "documentation": {
+      "name": "documentation",
+      "color": "0052cc"
     },
-    "[X] Accepted :heavy_check_mark:": {
-      "name": "[X] Accepted :heavy_check_mark:",
-      "color": "072dbc"
+    "draft": {
+      "name": "draft",
+      "color": "0052cc"
     },
-    "[X] Awaiting Review :eyes:": {
-      "name": "[X] Awaiting Review :eyes:",
-      "color": "FBCA04"
+    "waiting_review": {
+      "name": "waiting_review",
+      "color": "0052cc"
     },
-    "[X] Changes Requested :diamonds:": {
-      "name": "[X] Changes Requested :diamonds:",
-      "color": "f4ff1f"
+    "changes_requested": {
+      "name": "changes_requested",
+      "color": "0052cc"
     },
-    "[X] In Progress :gear:": {
-      "name": "[X] In Progress :gear:",
-      "color": "C5DEF5"
-    },
-    "[X] Needs documentation :pencil2:": {
-      "name": "[X] Needs documentation :pencil2:",
-      "description": "This needs to be documented!",
+    "ready_to_test": {
+      "name": "ready_to_test",
       "color": "0052cc"
     }
   },
@@ -109,5 +103,4 @@
       }
     }
   ]
-
 }
