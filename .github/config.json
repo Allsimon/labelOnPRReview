@@ -18,15 +18,15 @@
     },
     "waiting_review": {
       "name": "waiting_review",
-      "color": "0052cc"
+      "color": "FBCA04"
     },
     "changes_requested": {
       "name": "changes_requested",
-      "color": "0052cc"
+      "color": "f4ff1f"
     },
     "ready_to_test": {
       "name": "ready_to_test",
-      "color": "0052cc"
+      "color": "008000"
     }
   },
   "runners": [
