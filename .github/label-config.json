@@ -42,6 +42,7 @@
       "pr": {
         "labels": {
           "backend": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "filesMatch",
@@ -50,6 +51,7 @@
             ]
           },
           "UI": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "filesMatch",
@@ -58,6 +60,7 @@
             ]
           },
           "documentation": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "filesMatch",
@@ -66,6 +69,7 @@
             ]
           },
           "draft": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "isDraft",
@@ -74,6 +78,7 @@
             ]
           },
           "waiting_review": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "pendingReview",
@@ -86,6 +91,7 @@
             ]
           },
           "changes_requested": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "requestedChanges",
@@ -94,6 +100,7 @@
             ]
           },
           "ready_to_test": {
+            "requires": 1,
             "conditions": [
               {
                 "type": "isApproved",
