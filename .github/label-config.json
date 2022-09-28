@@ -83,6 +83,10 @@
               {
                 "type": "pendingReview",
                 "value": true
+              },
+              {
+                "type": "isApproved",
+                "value": false
               }
             ]
           },
