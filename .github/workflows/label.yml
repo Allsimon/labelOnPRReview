@@ -1,10 +1,10 @@
-name: "PR Edit: Sync labels"
+name: "Add Github labels to PR"
 
 on:
   pull_request:
-    types: [edited, closed, reopened, synchronize, ready_for_review, review_requested, review_request_removed]
+    types: [ edited, closed, reopened, synchronize, ready_for_review, review_requested, review_request_removed ]
   pull_request_review:
-    types: [submitted]
+    types: [ submitted ]
 
 jobs:
   Relabeling:
@@ -18,6 +18,3 @@ jobs:
         with:
           skipDelete: true
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: julrocas/pr-size-labeler@main
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
